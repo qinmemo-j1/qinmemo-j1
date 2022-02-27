@@ -2,18 +2,18 @@
 
 ## 技術選定
 
-- [React]
-- [Next.Js]
-- [TypeScript]
-- [Tailwind CSS]
-- [ESLint]
-- [Prettier]
-- [JEST]
-- [Storybook]
+- React
+- Next.Js
+- TypeScript
+- Tailwind CSS
+- ESLint
+- Prettier
+- JEST
+- Storybook
 
 ## Design
 
-- [Figma]
+- Figma
 
 # Develop
 
@@ -36,16 +36,16 @@ yarn start // localhost:3000 で起動。dev中はportを変える必要があ�
 main
 ```
 
-- [本番環境]
+- 本番環境
 
 ```
 develop
 ```
 
-- [ステージング環境]
+- ステージング環境
 
 ```
-feature/[issue番号]
+feature/issue番号
 ```
 
-- [開発の際は基本的に develop を最新にしてから feature ブランチに分岐し、PR を作成後 develop にマージする。]
+- 開発の際は基本的に develop を最新にしてから feature ブランチに分岐し、PR を作成後 develop にマージする。
