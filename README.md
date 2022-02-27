@@ -1,6 +1,6 @@
-# Qin Todo
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## 技術選定
+## Getting Started
 
 - React
 - Next.Js
@@ -11,30 +11,15 @@
 - JEST
 - Storybook
 
-## Design
+
+```bash
+npm run dev
+# or
+yarn dev
+```
 
 - Figma
 
-# Develop
-
-＃ 開発を行う場合
-
-```
-yarn dev // localhost:3000 で起動
-```
-
-＃ 本番の動作確認を行う場合
-
-```
-yarn build
-yarn start // localhost:3000 で起動。dev中はportを変える必要があります。
-```
-
-# Git Branch
-
-```
-main
-```
 
 - 本番環境
 
