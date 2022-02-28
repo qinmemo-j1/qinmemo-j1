@@ -13,6 +13,7 @@
     "fix:eslint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
     "fix:prettier": "prettier --write src"
     "test": "jest --watch",
+    "test-total-coverage": "jest --collectCoverage=true --coverageReporters=json-summary"
   },
   "dependencies": {
     "next": "12.1.0",
