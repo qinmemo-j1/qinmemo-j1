@@ -11,8 +11,8 @@
     "lint:prettier": "prettier --check src",
     "fix": "run-s --continue-on-error fix:eslint fix:prettier",
     "fix:eslint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
-    "fix:prettier": "prettier --write src"
-    "test": "jest --watch",
+    "fix:prettier": "prettier --write src",
+    "test": "jest --watch"
   },
   "dependencies": {
     "next": "12.1.0",
