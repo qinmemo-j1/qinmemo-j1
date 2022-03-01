@@ -4,5 +4,9 @@
   },
   "eslint.validate": ["javascript"],
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "cSpell.words": ["tailwindcss", "webp"]
 }
