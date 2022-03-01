@@ -10,6 +10,7 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
+    "plugin:tailwindcss/recommended",
     "prettier",
   ],
   parser: "@typescript-eslint/parser",
@@ -20,7 +21,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint"],
+  plugins: ["react", "@typescript-eslint", "tailwindcss"],
   rules: {
     "no-var": "error",
     "no-undef": "error",
