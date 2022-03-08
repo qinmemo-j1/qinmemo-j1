@@ -10,6 +10,7 @@
     "lint:eslint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "lint:prettier": "prettier --check src",
     "fix": "run-s --continue-on-error fix:eslint fix:prettier",
+    "fix:lint": "next lint --fix",
     "fix:eslint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
     "fix:prettier": "prettier --write src",
     "test": "jest --watch",
