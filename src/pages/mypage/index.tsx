@@ -3,8 +3,7 @@ import Link from "next/link";
 import Content from "@/components/Mypage/Content";
 import { Layout } from "@/layouts";
 import { VFC } from "react";
-import { CogIcon, LogoutIcon } from "@heroicons/react/solid";
-import { XIcon } from "@heroicons/react/outline";
+import { XIcon, CogIcon, LogoutIcon } from "@heroicons/react/solid";
 
 const Mypage: VFC = () => {
   const menuContents = [
@@ -32,44 +31,49 @@ const Mypage: VFC = () => {
 
   return (
     <Layout>
-      <div>
-        <span>
-          <XIcon className="w-8 h-8" />
-        </span>
-        <h1 className="text-xl">アカウント</h1>
-      </div>
-      {menuContents.map((menuContents) => {
-        return (
-          <>
-            <Content mypageContent={menuContents} />
-          </>
-        );
-      })}
-      <ul>
-        <li>
-          <Link href="/">お問い合わせ</Link>
-        </li>
-        <li>
-          <span>バージョン</span>
-          <span>1.0.0</span>
-        </li>
-      </ul>
-      <ul>
-        <Link href="/">
-          <li>
-            <span>
-              <CogIcon className="w-4 h-4" />
+      <div className="relative px-6">
+        <div className="py-6 mx-auto max-w-2xl">
+          <div className="flex justify-between justify-items-center lg:hidden">
+            <span className="flex flex-col justify-center">
+              <XIcon className="w-6 h-6" />
             </span>
-            <span>設定</span>
+            <h1 className="text-xl font-bold">アカウント</h1>
+            <span></span>
+          </div>
+          {menuContents.map((menuContents) => {
+            return (
+              <>
+                <Content mypageContent={menuContents} />
+              </>
+            );
+          })}
+          <ul className="relative font-bold ">
+            <li className="mt-8">
+              <Link href="/">お問い合わせ</Link>
+            </li>
+            <li className="flex justify-between mt-8">
+              <span>バージョン</span>
+              <span>1.0.0</span>
+            </li>
+          </ul>
+        </div>
+        <ul className="hidden absolute top-0 right-[max(calc((((100vw-1024px)/2)-calc(100vw/12))+18px),0px)] flex-col py-4 w-1/4 rounded-lg border drop-shadow-sm lg:flex">
+          <Link href="/">
+            <li className="flex gap-x-3 items-center py-2 px-4 hover:bg-gray-100">
+              <span>
+                <CogIcon className="w-6 h-6" />
+              </span>
+              <span>設定</span>
+            </li>
+          </Link>
+          <li className="flex gap-x-3 items-center py-2 px-4 text-red-600 hover:bg-gray-100">
+            <span>
+              <LogoutIcon className="w-6 h-6" />
+            </span>
+            <span>ログアウト</span>
           </li>
-        </Link>
-        <li>
-          <span>
-            <LogoutIcon className="w-4 h-4" />
-          </span>
-          <span>ログアウト</span>
-        </li>
-      </ul>
+        </ul>
+      </div>
     </Layout>
   );
 };

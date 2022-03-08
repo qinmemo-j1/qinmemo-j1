@@ -5,9 +5,9 @@ const Content = ({ mypageContent }) => {
   const mypageItems = mypageContent.mypageItems;
 
   return (
-    <div>
-      <h2>{mypageContent.title}</h2>
-      <ul>
+    <div className="mt-12">
+      <h2 className="text-sm text-gray-400">{mypageContent.title}</h2>
+      <ul className="relative font-bold">
         {mypageItems.map((mypageItem) => {
           return (
             <>
