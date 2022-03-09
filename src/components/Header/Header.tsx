@@ -16,6 +16,12 @@ export const Header: VFC = () => {
       </Link>
       <div className="w-[36px] h-[36px] rounded-full">
         <UserMenu />
+
+        <Link href="/mypage">
+          <a>
+            <Image src="/person.png" alt="logo" width={36} height={36} />
+          </a>
+        </Link>
       </div>
     </header>
   );
