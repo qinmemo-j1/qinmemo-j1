@@ -11,9 +11,9 @@ const Profile: NextPage = () => {
         <div className="mx-auto w-auto max-w-lg">
           <div className="py-6 m-auto">
             <div className="text-gray-500">アイコン</div>
-            <div className="flex">
+            <div className="flex items-center">
               <Image src="/avatar.jpg" alt="" width={100} height={100} />
-              <div className="relative max-h-full align-middle">
+              <div className="relative m-5 max-h-full align-middle">
                 <button className="w-24 max-h-full text-white align-middle bg-blue-400 hover:bg-blue-500 rounded-full">
                   変更する
                 </button>
