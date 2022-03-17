@@ -10,8 +10,8 @@ const Mypage: VFC = () => {
     {
       title: "設定",
       mypageItems: [
-        { item: "プロフィール設定", path: "/Mypage/profilesettings" },
-        { item: "アカウント設定", path: "/Mypage/accountsettings" },
+        { item: "プロフィール設定", path: "/mypage/profile" },
+        { item: "アカウント設定", path: "/mypage/account" },
         {
           item: "テーマ",
           path: "/Mypage/themesettings",
