@@ -6,12 +6,12 @@ import { ChevronLeftIcon } from "@heroicons/react/outline";
 import { useRouter } from "next/router";
 
 const Account: NextPage = () => {
-  const google = () => {
-    alert("google");
+  const handleGoogleConnect = () => {
+    alert("Google連携しました");
   };
 
-  const apple = () => {
-    alert("apple");
+  const handleAppleConnect = () => {
+    alert("Apple連携しました");
   };
 
   const router = useRouter();
@@ -46,7 +46,7 @@ const Account: NextPage = () => {
           <div>
             <button
               className="py-2 w-28 text-black bg-slate-200 rounded-3xl"
-              onClick={google}
+              onClick={handleGoogleConnect}
             >
               解除する
             </button>
@@ -60,7 +60,7 @@ const Account: NextPage = () => {
           <div>
             <button
               className="py-2 w-28 text-white bg-blue-500 rounded-3xl"
-              onClick={apple}
+              onClick={handleAppleConnect}
             >
               連携する
             </button>
@@ -72,9 +72,12 @@ const Account: NextPage = () => {
       </section>
       <ul>
         <li className="flex flex-row items-start mt-8 w-full">
-          <span className="font-bold text-red-500 cursor-pointer">
+          <label
+            htmlFor="my-modal-4"
+            className="font-bold text-red-500 cursor-pointer"
+          >
             ログアウト
-          </span>
+          </label>
         </li>
         <li className="flex flex-row justify-start mt-8 w-full">
           <span className=" py-2 w-32 font-bold text-red-500 cursor-pointer">

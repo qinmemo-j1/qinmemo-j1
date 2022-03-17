@@ -43,7 +43,9 @@ const Mypage: VFC = () => {
           {menuContents.map((menuContents) => {
             return (
               <>
-                <Content mypageContent={menuContents} />
+                <div key={menuContents.title}>
+                  <Content mypageContent={menuContents} />
+                </div>
               </>
             );
           })}
