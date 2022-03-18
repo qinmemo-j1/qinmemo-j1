@@ -4,6 +4,8 @@ import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 import { ChevronLeftIcon } from "@heroicons/react/outline";
 import { useRouter } from "next/router";
+import { LogoutModal } from "@/components/Modal/LogoutModal";
+import { AccountModal } from "@/components/Modal/AccountModal";
 
 const Account: NextPage = () => {
   const handleGoogleConnect = () => {
@@ -18,6 +20,26 @@ const Account: NextPage = () => {
   const handleClickReturn = () => {
     return router.back();
   };
+
+  // const [isDeleteAccountModalOpen, setIsDeleteAccountModalOpen] =
+  //   useState(false);
+  // const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
+
+  // const openDeleteAccountModal = () => {
+  //   setIsDeleteAccountModalOpen(true);
+  // };
+
+  // const closeDeleteAccountModal = () => {
+  //   setIsDeleteAccountModalOpen(false);
+  // };
+
+  // const openLogoutModal = () => {
+  //   setIsLogoutModalOpen(true);
+  // };
+
+  // const closeLogoutModal = () => {
+  //   setIsLogoutModalOpen(false);
+  // };
 
   return (
     <div className="px-5 mx-auto max-w-xl">
@@ -72,17 +94,10 @@ const Account: NextPage = () => {
       </section>
       <ul>
         <li className="flex flex-row items-start mt-8 w-full">
-          <label
-            htmlFor="my-modal-4"
-            className="font-bold text-red-500 cursor-pointer"
-          >
-            ログアウト
-          </label>
+          <LogoutModal />
         </li>
         <li className="flex flex-row justify-start mt-8 w-full">
-          <span className=" py-2 w-32 font-bold text-red-500 cursor-pointer">
-            アカウントの削除
-          </span>
+          <AccountModal />
         </li>
       </ul>
     </div>
