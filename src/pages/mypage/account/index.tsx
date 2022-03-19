@@ -21,26 +21,6 @@ const Account: NextPage = () => {
     return router.back();
   };
 
-  // const [isDeleteAccountModalOpen, setIsDeleteAccountModalOpen] =
-  //   useState(false);
-  // const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
-
-  // const openDeleteAccountModal = () => {
-  //   setIsDeleteAccountModalOpen(true);
-  // };
-
-  // const closeDeleteAccountModal = () => {
-  //   setIsDeleteAccountModalOpen(false);
-  // };
-
-  // const openLogoutModal = () => {
-  //   setIsLogoutModalOpen(true);
-  // };
-
-  // const closeLogoutModal = () => {
-  //   setIsLogoutModalOpen(false);
-  // };
-
   return (
     <div className="px-5 mx-auto max-w-xl">
       <div className="flex relative gap-x-6 justify-between items-center mb-8">
