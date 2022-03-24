@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { NextPage } from "next";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 import { ChevronLeftIcon } from "@heroicons/react/outline";
 import { useRouter } from "next/router";
+import { AlertModal } from "@/components/Modal/AlertModal";
 
 const Account: NextPage = () => {
   const handleGoogleConnect = () => {
@@ -15,9 +16,32 @@ const Account: NextPage = () => {
   };
 
   const router = useRouter();
+
+  const [isOpenLogout, setIsOpenLogout] = useState(false);
+  const [isOpenAccount, setIsOpenAccount] = useState(false);
+
   const handleClickReturn = () => {
     return router.back();
   };
+
+  const handleModalActions = [
+    {
+      isOpen: isOpenLogout,
+      setIsOpen: setIsOpenLogout,
+      title: "ログアウト",
+      message: "ログアウトしてよろしいですか？",
+      onClick: handleClickReturn,
+      buttonChildren: "ログアウト",
+    },
+    {
+      isOpen: isOpenAccount,
+      setIsOpen: setIsOpenAccount,
+      title: "アカウントの削除",
+      message: "アカウントを完全に削除してよろしいですか？",
+      onClick: () => alert("アカウントを削除しました"),
+      buttonChildren: "アカウントの削除",
+    },
+  ];
 
   return (
     <div className="px-5 mx-auto max-w-xl">
@@ -67,13 +91,31 @@ const Account: NextPage = () => {
           </div>
         </div>
       </div>
-      <section className="flex flex-row items-start mt-8 w-full">
-        <div className="text-sm font-bold text-gray-400">アカウントの操作</div>
-      </section>
-      <ul>
-        <li className="flex flex-row items-start mt-8 w-full"></li>
-        <li className="flex flex-row justify-start mt-8 w-full"></li>
-      </ul>
+      <div className="flex flex-col flex-1 items-center px-2">
+        <section className="flex flex-row items-start mt-8 w-full">
+          <div className="text-sm font-bold text-gray-400">
+            アカウントの操作
+          </div>
+        </section>
+      </div>
+
+      {handleModalActions.map((item) => (
+        <div key={item.title}>
+          <button
+            className="  p-2 mt-4 mb-3 font-bold text-red-500 dark:text-red-400 hover:bg-slate-100 rounded-sm dark:hover:bg-darkhover modal-button"
+            onClick={() => item.setIsOpen(true)}
+          >
+            {item.buttonChildren}
+          </button>
+          <AlertModal
+            isOpen={item.isOpen}
+            setIsOpen={item.setIsOpen}
+            message={item.message}
+            title={item.title}
+            onClick={item.onClick}
+          />
+        </div>
+      ))}
     </div>
   );
 };
