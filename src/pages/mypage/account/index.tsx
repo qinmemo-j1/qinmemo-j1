@@ -4,8 +4,6 @@ import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 import { ChevronLeftIcon } from "@heroicons/react/outline";
 import { useRouter } from "next/router";
-import { LogoutModal } from "@/components/Modal/LogoutModal";
-import { AccountModal } from "@/components/Modal/AccountModal";
 
 const Account: NextPage = () => {
   const handleGoogleConnect = () => {
@@ -73,12 +71,8 @@ const Account: NextPage = () => {
         <div className="text-sm font-bold text-gray-400">アカウントの操作</div>
       </section>
       <ul>
-        <li className="flex flex-row items-start mt-8 w-full">
-          <LogoutModal />
-        </li>
-        <li className="flex flex-row justify-start mt-8 w-full">
-          <AccountModal />
-        </li>
+        <li className="flex flex-row items-start mt-8 w-full"></li>
+        <li className="flex flex-row justify-start mt-8 w-full"></li>
       </ul>
     </div>
   );
