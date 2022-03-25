@@ -23,6 +23,7 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint", "tailwindcss"],
   rules: {
+    "tailwindcss/no-custom-classname": "off",
     "no-var": "error",
     "no-undef": "error",
     "react/prop-types": "off",
