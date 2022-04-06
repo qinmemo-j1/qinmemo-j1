@@ -20,6 +20,7 @@
     }
   },
   "include": [
+    "src/layouts/AccountLayout.jsx",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
