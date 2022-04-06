@@ -23,7 +23,7 @@ const Mypage: VFC = () => {
       title: "サポート",
       mypageItems: [
         { item: "プライバシーポリシー", path: "/mypage/support/privacy" },
-        { item: "利用規約", path: "" },
+        { item: "利用規約", path: "/mypage/support/terms" },
         { item: "オープンソースライセンス", path: "" },
       ],
     },
