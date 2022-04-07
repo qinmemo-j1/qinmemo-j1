@@ -3,6 +3,10 @@ module.exports = {
   theme: {
     extend: {},
   },
+  plugins: [
+    require("@tailwindcss/typography"),
+    // ...
+  ],
 
   mode: "jit",
 };
