@@ -14,7 +14,7 @@ const Mypage: VFC = () => {
         { item: "アカウント設定", path: "/mypage/account" },
         {
           item: "テーマ",
-          path: "/Mypage/themesettings",
+          path: "/mypage/theme",
           settingItem: "OSの設定に合わせる",
         },
       ],
