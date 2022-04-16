@@ -5,21 +5,28 @@ import type { VFC } from "react";
 
 import logo from "public/logo.svg";
 import { UserMenu } from "./UserMenu";
+import { useRouter } from "next/router";
 
 export const Header: VFC = () => {
+  const PATH_ACCOUNT_ACCOUNTSETTINGS = "/account/accountsettings";
+  const router = useRouter();
+
   return (
     <header className="flex justify-center items-center px-6 mx-auto max-w-screen-lg h-20 sm:px-4 md:justify-between">
-      <Link href="/">
-        <a>
-          <Image src={logo} alt="Qin Todo" height={24} width={113}></Image>
-        </a>
-      </Link>
-      <div className="w-[36px] h-[36px] rounded-full">
-        <UserMenu />
-
-        <Link href="/mypage">
+      {router.pathname === PATH_ACCOUNT_ACCOUNTSETTINGS ? (
+        <Image src="/logo_account.png" alt="logo" width={173} height={24} />
+      ) : (
+        <Link href="/">
           <a>
-            <Image src="/person.png" alt="logo" width={36} height={36} />
+            <Image src={logo} alt="Qin Todo" height={24} width={113} />
+          </a>
+        </Link>
+      )}
+
+      <div className="w-[36px] h-[36px] rounded-full">
+        <Link href="/mypage">
+          <a className="width={36} height={36}">
+            <UserMenu />
           </a>
         </Link>
       </div>
