@@ -27,6 +27,11 @@ module.exports = {
     "no-var": "error",
     "no-undef": "error",
     "react/prop-types": "off",
+    "react/display-name": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { varsIgnorePattern: "^_", argsIgnorePattern: "^_" },
+    ],
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
@@ -35,6 +40,8 @@ module.exports = {
         aspects: ["invalidHref", "preferButton"],
       },
     ],
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
   },
   settings: {
     react: {
