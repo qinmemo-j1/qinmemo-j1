@@ -104,7 +104,6 @@ export const TodoList: VFC<TodoListProps> = ({ category, items }) => {
     todo?: Todo
   ) => {
     if (e.key !== "Enter") return;
-    if (e.shiftKey) return;
     e.preventDefault();
 
     if (todo) {
@@ -114,6 +113,22 @@ export const TodoList: VFC<TodoListProps> = ({ category, items }) => {
       createTodo();
     }
     setInputValue("");
+  };
+
+  const isEditTodo = (todo: Todo) => {
+    return editTodo && todo === editTodo;
+  };
+
+  const onClickDone = (todo: Todo) => {
+    const newTodo = {
+      ...todo,
+      done: !todo.done,
+    };
+    const newTodoList = todoList.map((t) =>
+      t && t.id === todo.id ? newTodo : t
+    );
+
+    setTodoList(newTodoList);
   };
 
   return (
@@ -126,7 +141,7 @@ export const TodoList: VFC<TodoListProps> = ({ category, items }) => {
         {items.map((todo) => {
           return (
             todo &&
-            (editTodo && todo === editTodo ? (
+            (isEditTodo(todo) ? (
               <InputTodo
                 key={todo.id}
                 ref={inputRef}
@@ -141,6 +156,7 @@ export const TodoList: VFC<TodoListProps> = ({ category, items }) => {
                 todo={todo}
                 title={todo.title}
                 onClickLabel={onClickLabel}
+                onClickDone={onClickDone}
               />
             ))
           );
