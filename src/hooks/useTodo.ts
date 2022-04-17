@@ -13,5 +13,7 @@ export const categorizedTodo = (
   if (items === undefined) {
     return [];
   }
-  return items.filter((todo) => todo.category === category);
+  return items
+    .filter((todo) => todo.category === category)
+    .sort((a, b) => (a && b ? a.order - b.order : 0));
 };

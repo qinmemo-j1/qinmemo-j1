@@ -19,7 +19,7 @@ export const InputTodo = forwardRef<HTMLTextAreaElement, InputTodoProps>(
   (props, ref) => {
     const { todo, value, onChange, onBlur, onEnterKeyPress } = props;
     return (
-      <div className="group flex gap-2 items-start w-full cursor-pointer">
+      <div className="group flex gap-2 items-start mt-4 w-full cursor-pointer">
         <div className="flex-wrap">
           <input
             type="radio"

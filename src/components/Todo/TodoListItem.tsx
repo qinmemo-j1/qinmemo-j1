@@ -18,7 +18,7 @@ export const TodoListItem: VFC<TodoListItemProps> = (props) => {
       <div className="flex-wrap">
         <input
           type="radio"
-          className="w-6 h-6 border-2 border-base-300 checked:border-base-300 hover:border-base-300"
+          className="w-6 h-6 border-2"
           checked={todo?.done}
           onClick={() => {
             onClickDone(todo);

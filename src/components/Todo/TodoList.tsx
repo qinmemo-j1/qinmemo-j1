@@ -56,17 +56,23 @@ export const TodoList: VFC<TodoListProps> = ({ category, items }) => {
       const todoIds = todoList
         .filter((t) => t)
         .map((t) => t && t.id) as number[];
+      const orders = todoList
+        .filter((t) => t.category === category.type)
+        .map((t) => t && t.order) as number[];
       const latestId = Math.max(...todoIds);
+      const maxOrderNo = Math.max(...orders);
       const newTodo = {
         id: latestId + 1,
         title: inputRef.current.value,
-        done: false,
         category: category.type,
+        done: false,
+        order: maxOrderNo + 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       };
+      const newTodoList = [...todoList, newTodo];
 
-      setTodoList([...todoList, newTodo]);
+      setTodoList(newTodoList);
     } catch (e) {
       console.error(e);
     }
@@ -120,15 +126,19 @@ export const TodoList: VFC<TodoListProps> = ({ category, items }) => {
   };
 
   const onClickDone = (todo: Todo) => {
-    const newTodo = {
-      ...todo,
-      done: !todo.done,
-    };
-    const newTodoList = todoList.map((t) =>
-      t && t.id === todo.id ? newTodo : t
-    );
+    try {
+      const newTodo = {
+        ...todo,
+        done: !todo.done,
+      };
+      const newTodoList = todoList.map((t) =>
+        t && t.id === todo.id ? newTodo : t
+      );
 
-    setTodoList(newTodoList);
+      setTodoList(newTodoList);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   return (

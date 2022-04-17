@@ -3,6 +3,7 @@ export type Todo = {
   title: string;
   category: string;
   done: boolean;
+  order: number;
   createdAt: Date;
   updatedAt: Date;
 };
