@@ -9,16 +9,17 @@ type TodoListItemProps = {
   onClickLabel: (todo: Todo) => void;
   onClickDone: (todo: Todo) => void;
   todo: Todo;
+  radioColor: string;
 };
 
 export const TodoListItem: VFC<TodoListItemProps> = (props) => {
-  const { title, todo, onClickLabel, onClickDone } = props;
+  const { title, todo, radioColor, onClickLabel, onClickDone } = props;
   return (
     <div className="group flex gap-2 items-start w-full cursor-pointer">
       <div className="flex-wrap">
         <input
           type="radio"
-          className="w-6 h-6 border-2"
+          className={clsx("w-6 h-6 border-2", radioColor)}
           checked={todo?.done}
           onClick={() => {
             onClickDone(todo);

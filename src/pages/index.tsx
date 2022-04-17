@@ -13,16 +13,19 @@ const Home: NextPage = () => {
       type: "today",
       label: "今日する",
       color: "text-rose-400",
+      radioColor: "accent-rose-500",
     },
     tomorrow: {
       type: "tomorrow",
       label: "明日する",
       color: "text-orange-400",
+      radioColor: "accent-orange-600",
     },
     someday: {
       type: "someday",
       label: "今度する",
       color: "text-yellow-400",
+      radioColor: "accent-yellow-700",
     },
   };
 
