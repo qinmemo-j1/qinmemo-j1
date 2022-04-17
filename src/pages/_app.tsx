@@ -1,9 +1,19 @@
 import React from "react";
-import "../styles/globals.css";
+import { RecoilRoot } from "recoil";
 import type { AppProps } from "next/app";
 
+import "../styles/globals.css";
+
+if (process.env.NODE_ENV === "development") {
+  require("@/mocks/mock");
+}
+
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <RecoilRoot>
+      <Component {...pageProps} />
+    </RecoilRoot>
+  );
 }
 
 export default MyApp;
