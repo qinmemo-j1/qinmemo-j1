@@ -7,6 +7,7 @@ import type { Todo } from "@/types/todo";
 type InputTodoProps = {
   value: string;
   todo?: Todo;
+  radioColor: string;
   onChange: () => void;
   onBlur: (todo?: Todo) => void;
   onEnterKeyPress: (
@@ -17,13 +18,17 @@ type InputTodoProps = {
 
 export const InputTodo = forwardRef<HTMLTextAreaElement, InputTodoProps>(
   (props, ref) => {
-    const { todo, value, onChange, onBlur, onEnterKeyPress } = props;
+    const { todo, value, radioColor, onChange, onBlur, onEnterKeyPress } =
+      props;
     return (
       <div className="group flex gap-2 items-start mt-4 w-full cursor-pointer">
         <div className="flex-wrap">
           <input
             type="radio"
-            className="w-6 h-6 border-2 border-base-300 checked:border-base-300 hover:border-base-300"
+            className={clsx(
+              "w-6 h-6 border-2 border-base-300 checked:border-base-300 hover:border-base-300",
+              radioColor
+            )}
             checked={todo?.done}
             readOnly
           />

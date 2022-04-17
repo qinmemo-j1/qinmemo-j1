@@ -13,6 +13,7 @@ type TodoListProps = {
     type: string;
     label: string;
     color: string;
+    radioColor: string;
   };
   items: Todo[] | [];
 };
@@ -156,6 +157,7 @@ export const TodoList: VFC<TodoListProps> = ({ category, items }) => {
                 key={todo.id}
                 ref={inputRef}
                 value={inputValue}
+                radioColor={category.radioColor}
                 onChange={onChangeInputValue}
                 onBlur={onBlueInputTodo}
                 onEnterKeyPress={onEnterKeyPress}
@@ -165,6 +167,7 @@ export const TodoList: VFC<TodoListProps> = ({ category, items }) => {
                 key={todo.id}
                 todo={todo}
                 title={todo.title}
+                radioColor={category.radioColor}
                 onClickLabel={onClickLabel}
                 onClickDone={onClickDone}
               />
@@ -177,6 +180,7 @@ export const TodoList: VFC<TodoListProps> = ({ category, items }) => {
         <InputTodo
           ref={inputRef}
           value={inputValue}
+          radioColor={category.radioColor}
           onChange={onChangeInputValue}
           onBlur={onBlueInputTodo}
           onEnterKeyPress={onEnterKeyPress}
