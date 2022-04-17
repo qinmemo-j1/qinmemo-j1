@@ -3,6 +3,8 @@ import clsx from "clsx";
 import type { VFC } from "react";
 
 import type { Todo } from "@/types/todo";
+import { DeleteButton } from "./DeleteButton";
+import { CopyButton } from "./CopyButton";
 
 type TodoListItemProps = {
   title: string;
@@ -37,6 +39,11 @@ export const TodoListItem: VFC<TodoListItemProps> = (props) => {
       >
         {title}
       </label>
+
+      <div className="flex flex-wrap gap-3 opacity-0 group-hover:opacity-100">
+        <CopyButton todoId={todo.id} />
+        <DeleteButton todoId={todo.id} />
+      </div>
     </div>
   );
 };
