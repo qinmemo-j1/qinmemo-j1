@@ -12,7 +12,7 @@ export const AddTodoButton: VFC<AddTodoButtonProps> = ({ onClick }) => {
       className="flex items-center w-fit cursor-pointer"
       onClick={onClick}
     >
-      <PlusCircleIcon className="w-6 h-6" />
+      <PlusCircleIcon className="w-6 h-6 text-gray-400" />
       <span className="ml-2 text-gray-400">タスクを追加する</span>
     </button>
   );
