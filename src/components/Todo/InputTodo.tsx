@@ -25,10 +25,7 @@ export const InputTodo = forwardRef<HTMLTextAreaElement, InputTodoProps>(
         <div className="flex-wrap">
           <input
             type="radio"
-            className={clsx(
-              "w-6 h-6 border-2 border-base-300 checked:border-base-300 hover:border-base-300",
-              radioColor
-            )}
+            className={clsx("w-6 h-6 border-2", radioColor)}
             checked={todo?.done}
             readOnly
           />
